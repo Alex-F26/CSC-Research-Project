@@ -1,0 +1,6 @@
+        [theme]
+        primaryColor="#000000ff"  # Color for interactive elements
+        backgroundColor="#010011" # Main app background
+        secondaryBackgroundColor="#242424ff" # Background for widgets and sidebar
+        textColor="#c8ebffff" # Text color
+        font="sans serif" # Font family (sans serif, serif, or monospace)
