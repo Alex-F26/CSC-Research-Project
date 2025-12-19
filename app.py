@@ -144,21 +144,40 @@ if st.session_state["results"]:
         pdf.set_font("Arial", "B", 12)
         pdf.multi_cell(0, 6, "CAPECs:")
         pdf.set_font("Arial", "", 12)
-        capecs_text = ', '.join([safe_text(c['capec_id']) for c in data['capec']])
+        capec_list = []
+        for c in data["capec"]:
+            capec_id = c.get("capec_id")
+            name = next(
+                (t.get("name") for t in data["attack"] if t.get("capec_id") == capec_id),
+                "UNKNOWN"
+            )
+            capec_list.append(f"{safe_text(capec_id)} - {safe_text(name)}")
+
+        capecs_text = ", ".join(capec_list)
+
         pdf.multi_cell(0, 6, indent + capecs_text)
 
         # ATT&CK
         pdf.set_font("Arial", "B", 12)
         pdf.multi_cell(0, 6, "ATT&CK:")
         pdf.set_font("Arial", "", 12)
-        attacks_text = ', '.join([safe_text(a.get('id', '')) for a in data['attack'] if a.get('type') == 'ATT&CK'])
+        attacks_text = ", ".join([
+            f"{safe_text(a.get('id'))} - {safe_text(a.get('name', 'UNKNOWN'))}"
+            for a in data["attack"]
+            if a.get("type") == "ATT&CK"
+        ])
+
         pdf.multi_cell(0, 6, indent + attacks_text)
 
         # D3FEND
         pdf.set_font("Arial", "B", 12)
         pdf.multi_cell(0, 6, "D3FEND:")
         pdf.set_font("Arial", "", 12)
-        d3fend_text = ', '.join([safe_text(d.get('d3fend_id', '')) for d in data['d3fend']])
+        d3fend_text = ", ".join([
+            f"{safe_text(d.get('d3fend_id'))} - {safe_text(d.get('d3fend_name', 'UNKNOWN'))}"
+            for d in data["d3fend"]
+        ])
+
         pdf.multi_cell(0, 6, indent + d3fend_text)
 
         # OWASP
@@ -253,8 +272,10 @@ if st.session_state["results"]:
     if selected_taxonomy["type"] == "ATT&CK":
         st.subheader("Associated D3FEND Techniques")
         d3fend_for_attack = [
-            d for d in cve_data["d3fend"] if d.get("id") == selected_taxonomy.get("id")
+            d for d in cve_data["d3fend"]
+            if d.get("attack_id") == selected_taxonomy.get("id")
         ]
+
         if not d3fend_for_attack:
             st.warning("No D3FEND techniques found for this ATT&CK technique.")
         else:
