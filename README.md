@@ -93,6 +93,10 @@ Create and activate a virtual environment:
 
  (Basically just make sure that your csv file has your CVE ID's in the first column and you're good to go!)
 
+ Sample CSV File:
+
+ [known_exploited_vulnerabilities (1).csv](https://github.com/user-attachments/files/24253564/known_exploited_vulnerabilities.1.csv)
+
 # Dependencies:
  
   Streamlit
@@ -118,3 +122,4 @@ Create and activate a virtual environment:
 # License:
  
  MIT License 
+
