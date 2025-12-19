@@ -3,6 +3,7 @@
 A Streamlit web application to link CVEs to CWEs, CAPECs, MITRE ATT&CK techniques, D3FEND mitigations, OWASP threats, and the now-deprecated WASC entries. Users can either input a single CVE or upload CSV files with multiple CVEs and generate a PDF report of the linked categories.
 
 Features:
+
   Single CVE Lookup: Enter a CVE ID to see all linked CWEs, CAPECs, ATT&CK techniques, and D3FEND mappings.
   CSV Upload: Upload multiple CSV files containing CVE IDs for batch processing.
   Interactive Viewer: Select CVEs, associated CWEs, CAPECs, and taxonomies via dropdowns.
