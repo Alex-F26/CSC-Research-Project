@@ -1,89 +1,74 @@
-# CSC-Research-Project
-PROJECT REFLECTION:
+# CVE-CWE-CAPEC-ATT&CK-D3FEND Mapper
 
-Project Name:  
+A Streamlit web application to link CVEs to CWEs, CAPECs, MITRE ATT&CK techniques, D3FEND mitigations, OWASP threats, and the now-deprecated WASC entries. Users can either input a single CVE or upload CSV files with multiple CVEs and generate a PDF report of the linked categories.
 
-CVE-CWE Mapper 
+Features:
+  Single CVE Lookup: Enter a CVE ID to see all linked CWEs, CAPECs, ATT&CK techniques, and D3FEND mappings.
+  CSV Upload: Upload multiple CSV files containing CVE IDs for batch processing.
+  Interactive Viewer: Select CVEs, associated CWEs, CAPECs, and taxonomies via dropdowns.
+  PDF Export: Download a comprehensive PDF report of all mappings.
+  Persistent Session: Previously processed CVEs remain in session storage.
+
+Installation:
+
+  Clone this repository:
+    git clone https://github.com/Alex-F26/cve-mapper.git
+    cd cve-mapper
+
+Create and activate a virtual environment:
+  python -m venv venv
+# Windows
+  venv\Scripts\activate
+# macOS/Linux
+  source venv/bin/activate
 
 
-Description: 
+  Install dependencies:
 
-A program that will provide an intuitive and accessible way to visualize a topology containing CVE’s with their respective CWE’s. It will also allow for the creation of new CWE’s.  
+  pip install -r requirements.txt
 
+  Ensure the Linkers package with modules cve_cwe_linker, cwe_capec_linker, capec_taxonomy_linker, and attack_defend_linker is available in your project directory.
 
-Why this project? 
+Usage:
+  Run the Streamlit app:
+  streamlit run app.py
 
-Currently there are thousands of CVE’s that are not linked to CWE’s, which makes it significantly more difficult to analyze said vulnerabilities and find solutions to fix and/or avoid them.  
+Single CVE Lookup:
+  Enter a CVE ID in the text box.
+  View linked CWEs, CAPECs, ATT&CK techniques, D3FEND mitigations, OWASP, and WASC entries.
+
+CSV Batch Processing:
+  Upload one or more CSV files containing a cveID column.
+  Click Process CSVs.
+  View results and download a PDF report using the Download All Mappings as PDF button.
+
+Interactive Selection:
+ Select a CVE from the dropdown.
+ Select associated CWE.
+ Select associated CAPEC.
+ View linked taxonomies (ATT&CK / OWASP / WASC).
+ For ATT&CK, view linked D3FEND techniques.
+
+File Format for CSV Upload:
+ Your CSV files must have at least the following in the first column:
  
+ cveID
+ CVE-2023-12345
+ CVE-2022-54321
 
-Importance in Cybersecurity: 
+ (Basically just make sure that your csv file has your CVE ID's in the first column and you're good to go!)
 
-A tool like this would help with the automation of CVE mappings, ultimately accelerating the response and recovery times when a cyber attack may occur. 
- 
+Dependencies:
+  Streamlit
+  pandas
+  fpdf
+  Python 3.8+
+  Linkers package with your CVE/CWE/CAPEC/ATT&CK/D3FEND mapping modules
 
-What have others done? 
+Notes:
+  D3FEND mappings are only available for MITRE ATT&CK techniques.
+  The PDF generation automatically wraps long lists to avoid cutting off content.
+  OWASP and WASC are included if present in the taxonomy mappings.
 
-While there does not seem to be an automated tool for mappings, there are methods to manually link CVE’s to CWE’s, which is currently very time consuming. MITRE has a website that has the current CVE’s, both mapped and unmapped with sections detailing aspects of the vulnerabilities. 
-
-
-Prior experience: 
-
-Currently I am capable of efficiently traversing virtual spaces, effectively planning for software projects, and developing/testing code following principles of software design. I am familiar with cybersecurity frameworks. 
-
- 
-Required experience: 
-
-I will need to learn more about the cyberspace that I will be working in. I’ll need to develop the skills to analyze and categorize CVE’s manually if I plan to find a way to automate the process. 
-
- 
-What I hope to learn: 
-
-I hope to learn how to code more efficiently. I hope to learn more about vulnerabilities, weaknesses, how these are used in cyber attacks and how to avoid/fix these exploits 
-
-PROJECT SCOPE:
-
-o Goal:  
-
--I want to create a program that can facilitate the understanding of CVE’s and their relationship to CWE’s by providing a topology-type of visualization where the end goal is for all CVE’s to be mapped with a respective CWE 
--The program could possibly provide an efficient algorithm to automate the categorization of CVE’s based on certain features or key-words. 
--The program should have the ability to prompt the creation of new CWE’s if the criteria is much too niche 
--This program should facilitate the process of finding the weakness related to vulnerabilities and speed up the recovery process after an attack 
-
-o Scope:  
-
-In-scope: 
-
--UML diagrams, workflows, introductory/prototype code and website, some resulting CVE to CWE mappings 
-
-Out-of-Scope 
-
--Fully integrated program that manages to map every existing and future CVE’s to a CWE 
-
-o Deliverables:  
-
-Deliverables include: 
-
--Diagrams 
--Prototype Code 
--Dataset(Topology) 
--Example visualization(may be within a website) 
--Successful use case scenario 
-
-o Timeline:  
-
-Planning Phase 10/3 - 10/24 
--Conduct more research 
--Expected use cases and results 
--Web conceptualization 
--Collect unmapped CVE’s to test  
--Class diagram 
--Topology visualization 
-
-Coding Phase 10/24 - TBD 
--Simple UI to showcase workflow 
--CVE mapping function 
--Topology Creation 
-
-Test Phase (Synchronized with Coding Phase) 
--Run the code with CVE’s 
--Create a new CWE based on uncategorized CVE’s 
+License:
+ MIT License 
