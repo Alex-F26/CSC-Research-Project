@@ -5,9 +5,13 @@ A Streamlit web application to link CVEs to CWEs, CAPECs, MITRE ATT&CK technique
 Features:
 
   Single CVE Lookup: Enter a CVE ID to see all linked CWEs, CAPECs, ATT&CK techniques, and D3FEND mappings.
+  
   CSV Upload: Upload multiple CSV files containing CVE IDs for batch processing.
+  
   Interactive Viewer: Select CVEs, associated CWEs, CAPECs, and taxonomies via dropdowns.
+  
   PDF Export: Download a comprehensive PDF report of all mappings.
+  
   Persistent Session: Previously processed CVEs remain in session storage.
 
 Installation:
