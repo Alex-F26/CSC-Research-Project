@@ -12,7 +12,7 @@ Features:
 Installation:
 
   Clone this repository:
-    git clone https://github.com/Alex-F26/cve-mapper.git
+    git clone[ https://github.com/Alex-F26/cve-mapper.git](https://github.com/Alex-F26/CSC-Research-Project.git)
     cd cve-mapper
 
 Create and activate a virtual environment:
