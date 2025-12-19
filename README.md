@@ -119,6 +119,10 @@ Create and activate a virtual environment:
   
   OWASP and WASC are included if present in the taxonomy mappings.
 
+# Future Potential Additions
+
+  Using the MITRE extractor tools, I plan to add full related mappings to as many CVE's as possible
+
 # License:
  
  MIT License 
