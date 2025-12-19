@@ -63,7 +63,8 @@ Dependencies:
   pandas
   fpdf
   Python 3.8+
-  Linkers package with your CVE/CWE/CAPEC/ATT&CK/D3FEND mapping modules
+  Linkers package with the CVE/CWE/CAPEC/ATT&CK/D3FEND mapping modules
+  CSV package with the following CSV's: ATTACK_DEFEND.csv/CAPEC_ATTACK.csv/CWE_CAPEC.csv/test.csv
 
 Notes:
   D3FEND mappings are only available for MITRE ATT&CK techniques.
