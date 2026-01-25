@@ -1,14 +1,16 @@
 # CVE-CWE-CAPEC-ATT&CK-D3FEND Mapper
 
-A Streamlit web application to link CVEs to CWEs, CAPECs, MITRE ATT&CK techniques, D3FEND mitigations, OWASP threats, and the now-deprecated WASC entries. Users can either input a single CVE or upload CSV files with multiple CVEs and generate a PDF report of the linked categories.
+This project is a **Streamlit-based web application** that links software, firmware, and hardware vulnerabilities (CVE's) to related CWE's, CAPEC Attack Patterns, available MITRE Taxonomies (Att&CK, OWASP, and even the, now deprecated, WASC ID's), and MITRE D3FEND Techniques.   
 
+Users can analyse a **Single CVE** or a **Batch of CVE's using appropriate CSV files**, explore relationships interactively, and export the results as a **PDF Report**
 
-Use this link to use the site:
+# Live Demo:
+
+Use this link to access the hosted version:
 
 https://csc-research-project-uekgmg9482bt7vjnc8my5j.streamlit.app/
 
-or continue reading to install the program within your own local environment.
-
+To run the application locally, continue reading the following instructions for installations and required dependencies.
 
 # Features:
 
