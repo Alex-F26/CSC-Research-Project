@@ -2,7 +2,7 @@
 
 This project is a **Streamlit-based web application** that links software, firmware, and hardware vulnerabilities (CVE's) to related CWE's, CAPEC Attack Patterns, available MITRE Taxonomies (Att&CK, OWASP, and even the, now deprecated, WASC ID's), and MITRE D3FEND Techniques.   
 
-Users can analyse a **Single CVE** or a **Batch of CVE's using appropriate CSV files**, explore relationships interactively, and export the results as a **PDF Report**
+Users can analyze a **Single CVE** or a **Batch of CVE's using appropriate CSV files**, explore relationships interactively, and export the results as a **PDF Report**
 
 # Live Demo:
 
